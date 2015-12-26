@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 
 # KELVIN
-config.py
+keys.py
 
 # C extensions
 *.so

@@ -1,4 +1,4 @@
-import config
+import keys
 
 from flask import Flask, request, jsonify, render_template, redirect, url_for, session, Response, make_response
 from flask.ext.cors import CORS
@@ -8,6 +8,7 @@ import sys, json, datetime
 import parse_driver as ParseDriver
 
 app = Flask(__name__)
+app.config.from_pyfile('config.py')
 CORS(app)
 
 # *********************** ROUTES ***********************
@@ -19,6 +20,11 @@ def hello():
 @app.route('/test')
 def test_route():
 	return 'testing'
+
+@app.route('/render_template')
+def test_route():
+	render_template('index.html')
+	return 'ok'
 
 # *********************** GO LINKS ***********************
 

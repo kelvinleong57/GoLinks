@@ -1,4 +1,4 @@
-import config
+import keys
 import json, httplib, urllib
 
 def get_connection():

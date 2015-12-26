@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "GoLinks": {
+      "applicationId": "VYI8JquCNDJDQNyXaGlKZaxZpFUE9hR8ZZ0biDj5"
+    },
+    "_default": {
+      "link": "GoLinks"
+    }
+  }
+}

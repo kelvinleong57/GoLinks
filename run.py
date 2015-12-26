@@ -45,5 +45,10 @@ def create_golink():
 
 # *********************** LOGIC ***********************
 
-if __name__ == '__main__':
-	app.run()
+if __name__ == "__main__":
+	try:
+		port = int(sys.argv[1])
+		app.run(host='0.0.0.0', port=port, debug=False)
+	except:
+		port = 3000
+		app.run(host='0.0.0.0', port=port, debug=True)

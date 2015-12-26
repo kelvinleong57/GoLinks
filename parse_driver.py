@@ -14,8 +14,8 @@ def make_parse_get_request(url, params={}):
 		url + '?%s' % params,
 		'',
 		{
-			"X-Parse-Application-Id": config.PARSE_APP_ID,
-			"X-Parse-REST-API-Key": config.PARSE_REST_API_KEY
+			"X-Parse-Application-Id": keys.PARSE_APP_ID,
+			"X-Parse-REST-API-Key": keys.PARSE_REST_API_KEY
 		}
 	)
 	result = json.loads(connection.getresponse().read())
@@ -28,8 +28,8 @@ def make_parse_post_request(url, obj):
 		url,
 		json.dumps(obj),
 		{
-			"X-Parse-Application-Id": config.PARSE_APP_ID,
-			"X-Parse-REST-API-Key": config.PARSE_REST_API_KEY
+			"X-Parse-Application-Id": keys.PARSE_APP_ID,
+			"X-Parse-REST-API-Key": keys.PARSE_REST_API_KEY
 		}
 	)
 	result = json.loads(connection.getresponse().read())
@@ -42,8 +42,8 @@ def make_parse_put_request(url, obj):
 		url,
 		json.dumps(obj),
 		{
-			"X-Parse-Application-Id": config.PARSE_APP_ID,
-			"X-Parse-REST-API-Key": config.PARSE_REST_API_KEY
+			"X-Parse-Application-Id": keys.PARSE_APP_ID,
+			"X-Parse-REST-API-Key": keys.PARSE_REST_API_KEY
 		}
 	)
 	result = json.loads(connection.getresponse().read())
@@ -56,8 +56,8 @@ def make_parse_delete_request(url, obj):
 		url,
 		'',
 		{
-			"X-Parse-Application-Id": config.PARSE_APP_ID,
-			"X-Parse-REST-API-Key": config.PARSE_REST_API_KEY
+			"X-Parse-Application-Id": keys.PARSE_APP_ID,
+			"X-Parse-REST-API-Key": keys.PARSE_REST_API_KEY
 		}
 	)
 	result = json.loads(connection.getresponse().read())

@@ -2,7 +2,7 @@
 
 import os
 
-REPO_NAME = "kelvinleong57.github.io"  # Used for FREEZER_BASE_URL
+REPO_NAME = "go-links"  # Used for FREEZER_BASE_URL
 DEBUG = True
 
 # Assumes the app is located in the same directory

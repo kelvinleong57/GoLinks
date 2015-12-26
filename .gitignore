@@ -2,8 +2,10 @@
 __pycache__/
 *.py[cod]
 
-# KELVIN
+
+# *** sensitive Parse key data ***
 keys.py
+
 
 # C extensions
 *.so

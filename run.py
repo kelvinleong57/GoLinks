@@ -21,11 +21,6 @@ def hello():
 def test_route():
 	return 'testing'
 
-@app.route('/render_template')
-def test_route():
-	render_template('index.html')
-	return 'ok'
-
 # *********************** GO LINKS ***********************
 
 @app.route('/go/<key>')
@@ -56,5 +51,5 @@ if __name__ == "__main__":
 		port = int(sys.argv[1])
 		app.run(host='0.0.0.0', port=port, debug=False)
 	except:
-		port = 3000
+		port = 5000
 		app.run(host='0.0.0.0', port=port, debug=True)

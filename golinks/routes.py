@@ -7,7 +7,7 @@ import sys, json, datetime
 # Kelvin
 import parse_driver as ParseDriver
 
-from __init__ import app
+from golinks import app
 
 # app = Flask(__name__)
 # app.config.from_pyfile('config.py')
@@ -16,7 +16,7 @@ from __init__ import app
 # *********************** ROUTES ***********************
 
 @app.route('/')
-def hello():
+def home():
 	return 'Kelvin Leong website'
 
 @app.route('/test')

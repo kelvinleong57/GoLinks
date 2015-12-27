@@ -1,7 +1,7 @@
 import keys
 
 from flask import Flask, request, jsonify, render_template, redirect, url_for, session, Response, make_response
-from flask.ext.cors import CORS
+# from flask.ext.cors import CORS
 import sys, json, datetime
 
 # Kelvin
@@ -9,7 +9,7 @@ import parse_driver as ParseDriver
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
-CORS(app)
+# CORS(app)
 
 # *********************** ROUTES ***********************
 

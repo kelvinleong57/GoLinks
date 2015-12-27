@@ -7,8 +7,10 @@ import sys, json, datetime
 # Kelvin
 import parse_driver as ParseDriver
 
-app = Flask(__name__)
-app.config.from_pyfile('config.py')
+from __init__ import app
+
+# app = Flask(__name__)
+# app.config.from_pyfile('config.py')
 # CORS(app)
 
 # *********************** ROUTES ***********************
@@ -43,13 +45,3 @@ def create_golink():
 
 	ParseDriver.make_parse_post_request('/1/classes/ParseGoLink', golink)
 	return 'ok'
-
-# *********************** LOGIC ***********************
-
-if __name__ == "__main__":
-	try:
-		port = int(sys.argv[1])
-		app.run(host='0.0.0.0', port=port, debug=False)
-	except:
-		port = 5000
-		app.run(host='0.0.0.0', port=port, debug=True)

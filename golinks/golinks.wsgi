@@ -1,0 +1,1 @@
+from golinks import app as application

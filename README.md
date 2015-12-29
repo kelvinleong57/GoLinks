@@ -18,7 +18,18 @@ To ensure scalability, files and folders were structured as packages. Package is
 ### runserver.py
 Its only job is to choose the port number and run the application. It has been split off from the package for structure's sake.
 ### routes.py
-Handles the logic for making the Parse requests for go-links. Also is what the website that directs go-links.
+Handles the logic for making the Parse requests for go-links. Also allows the website to directs go-links.
+
+It currently has the following routes:
+```python
+@app.route('/go/<key>')
+def go(key):
+  # given a key, user will be redirected to the corresponding URL bookmarked with that key
+
+@app.route('/create_golink', methods=['POST'])
+def create_golink():
+  # upon an POST request, creates a go-link with the key and URL (both encoded) and pushes to Parse
+```
 ### parse_driver.py
 Handles all of the Parse GET and POST requests
 

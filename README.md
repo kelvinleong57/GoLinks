@@ -39,6 +39,11 @@ def go(key):
 @app.route('/create_golink', methods=['POST'])
 def create_golink():
   # upon an POST request, creates a go-link with the request.form's key and URL (both encoded) and pushes this to Parse
+
+@app.route('/lookup')
+def lookup():
+  # GET request for the key(s) correspoding to the request's URL
+  # returns a JSON list of keys, may be empty
 ```
 ### parse_driver.py
 handles all of the Parse GET and POST requests

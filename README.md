@@ -18,7 +18,7 @@ Follow the instructions in the Chrome extension repository to install it. Usage 
 3. Create keys.py by filling out keys-example.py
     - the Parse keys are found at https://parse.com/apps/golinks--2/
 4. Run the Flask server
-    - on Terminal, run `python runserver.py` from the root directory
+    - on Terminal, run `python run.py` from the root directory
 5. Visit `localhost:5000/` to get started
 
 ## Dependencies

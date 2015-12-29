@@ -36,12 +36,8 @@ def go(key):
 
 @app.route('/create_golink', methods=['POST'])
 def create_golink():
-	# form = request.get_json()
-	# golink = {	'key': form.get('key'),
-				# 'url': form.get('url') }
-
-	golink = {	'key': 'asdasd',
-				'url': 'asdasdasd' }
+	golink = {	'key': request.form['key'],
+				'url': request.form['url'] }
 
 	ParseDriver.make_parse_post_request('/1/classes/ParseGoLink', golink)
 	return 'ok'

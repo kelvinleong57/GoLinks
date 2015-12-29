@@ -3,6 +3,7 @@ import keys
 from flask import Flask, request, jsonify, render_template, redirect, url_for, session, Response, make_response
 # from flask.ext.cors import CORS
 import sys, json, datetime
+import urllib2
 
 # Kelvin
 import parse_driver as ParseDriver
@@ -32,7 +33,9 @@ def go(key):
 	if len(golinks) == 0:
 		return 'not a valid key'
 	else:
-		return redirect(golinks[0]['url'])
+		# decode from encoded version on Parse
+		decoded_url = urllib2.unquote(golinks[0]['url'])
+		return redirect(decoded_url)
 
 @app.route('/create_golink', methods=['POST'])
 def create_golink():

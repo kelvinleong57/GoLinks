@@ -1,0 +1,3 @@
+# Parse
+PARSE_APP_ID = 'insert_PARSE_APP_ID'
+PARSE_REST_API_KEY = 'insert_PARSE_REST_API_KEY'

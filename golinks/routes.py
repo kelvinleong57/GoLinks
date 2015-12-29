@@ -17,8 +17,9 @@ from golinks import app
 # *********************** ROUTES ***********************
 
 @app.route('/')
-def home():
-	return 'Kelvin Leong website'
+@app.route('/go')
+def index():
+	return render_template('index.html', name='Kelvin')
 
 @app.route('/test')
 def test_route():
@@ -28,8 +29,12 @@ def test_route():
 
 @app.route('/go/<key>')
 def go(key):
-	params = {'where': json.dumps({'key': key})}
+	# decode from encoded version on Parse
+	decoded_key = urllib2.quote(key, 'utf-8')
+
+	params = {'where': json.dumps({'key': decoded_key})}
 	golinks = ParseDriver.make_parse_get_request('/1/classes/ParseGoLink', params)['results']
+	
 	if len(golinks) == 0:
 		return 'not a valid key'
 	else:
@@ -44,3 +49,13 @@ def create_golink():
 
 	ParseDriver.make_parse_post_request('/1/classes/ParseGoLink', golink)
 	return 'ok'
+
+@app.route('/lookup', methods=['GET'])
+def lookup():
+	params = {'where': json.dumps({'url': request.form['url']})}
+
+	golinks = ParseDriver.make_parse_get_request('/1/classes/ParseGoLink', params)['results']
+	if len(golinks) == 0:
+		return 'No previous go-links found'
+	else:
+		return golinks[0]['keys']
